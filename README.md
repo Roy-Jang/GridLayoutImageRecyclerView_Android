@@ -1,6 +1,8 @@
 # GridLayoutImageRecyclerView_Android
 안드로이드 이미지 리사클러뷰
 
+retrofit을 이용한 endless 이미지 recyclerview 제작 샘플
+
 사용라이브러리
 =============
 
