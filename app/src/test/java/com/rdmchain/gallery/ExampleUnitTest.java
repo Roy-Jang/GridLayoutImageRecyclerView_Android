@@ -1,4 +1,4 @@
-package com.rdmchain.gridlayoutimagerecyclerview;
+package com.rdmchain.gallery;
 
 import org.junit.Test;
 

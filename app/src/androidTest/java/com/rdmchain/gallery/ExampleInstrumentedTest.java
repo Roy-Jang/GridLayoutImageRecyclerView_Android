@@ -1,4 +1,4 @@
-package com.rdmchain.gridlayoutimagerecyclerview;
+package com.rdmchain.gallery;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.rdmchain.gridlayoutimagerecyclerview", appContext.getPackageName());
+        assertEquals("com.rdmchain.gallery", appContext.getPackageName());
     }
 }
