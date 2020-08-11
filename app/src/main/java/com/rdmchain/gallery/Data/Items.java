@@ -46,12 +46,6 @@ public class Items {
     @SerializedName("item_img5")
     private String itemImg5;
 
-    @SerializedName("created_at")
-    private String createdAt;
-
-    @SerializedName("updated_at")
-    private String updatedAt;
-
     public Items(String id, String shopId, String os, String itemStatus, String itemBrand, String itemCategory, String itemName, String itemPrice, String itemMemo, String itemImg1, String itemImg2, String itemImg3, String itemImg4, String itemImg5, String createdAt, String updatedAt) {
         this.id = id;
         this.shopId = shopId;
@@ -67,8 +61,6 @@ public class Items {
         this.itemImg3 = itemImg3;
         this.itemImg4 = itemImg4;
         this.itemImg5 = itemImg5;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
 
     public String getId() {
@@ -127,11 +119,4 @@ public class Items {
         return itemImg5;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
 }

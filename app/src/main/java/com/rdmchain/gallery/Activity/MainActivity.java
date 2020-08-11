@@ -27,18 +27,22 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements AdapterItems.OnLoadMoreListener {
 
+    // Context
     private Context mContext;
 
+    // View 관련
     private RecyclerView mRecyclerView;
     private ProgressBar mProgressBar;
-    private ApiInterface apiInterface;
     private NestedScrollView mNestedScrollView;
+
+    //Api
+    private ApiInterface mApiInterface;
 
     // 리스트 관련
     private AdapterItems mAdapter;
     private List<Items> itemsList;
     private int nextPage, totalCount;
-    private GridLayoutManager gridLayoutManager;
+    private GridLayoutManager mGridLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,13 +58,13 @@ public class MainActivity extends AppCompatActivity implements AdapterItems.OnLo
 
         // 리스트 기본값
         itemsList = new ArrayList<Items>();
-        gridLayoutManager = new GridLayoutManager(this, 2);
-        mRecyclerView.setLayoutManager(gridLayoutManager);
+        mGridLayoutManager = new GridLayoutManager(this, 2);
+        mRecyclerView.setLayoutManager(mGridLayoutManager);
         mAdapter = new AdapterItems(this, itemsList, mContext, mProgressBar);
         mRecyclerView.setAdapter(mAdapter);
         nextPage = 1;
         totalCount = 0;
-        apiInterface = ApiClient.getApiclient().create(ApiInterface.class);
+        mApiInterface = ApiClient.getApiclient().create(ApiInterface.class);
 
         // 처음 페이지
         callApi(false);
@@ -84,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements AdapterItems.OnLo
     }
 
     private void callApi(final boolean isMore) {
-        Call <ItemsDataResponse> call = apiInterface.getItems(nextPage);
+        Call <ItemsDataResponse> call = mApiInterface.getItems(nextPage);
         call.enqueue(new Callback<ItemsDataResponse>() {
             @Override
             public void onResponse(Call<ItemsDataResponse> call, Response<ItemsDataResponse> response) {
