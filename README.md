@@ -8,8 +8,8 @@ retrofit을 이용한 endless 이미지 recyclerview 제작 샘플
 
 <pre>
 <code>
-    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
 
     implementation 'com.github.bumptech.glide:glide:4.3.1'
     
